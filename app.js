@@ -3,13 +3,15 @@ var inputs = [];
 const mrRobot = 'mrrobot';
 const got = 'gameofthrones';
 const westworld = 'westworld';
-const dexter = 'dexter';
 const bojack = 'bojack';
 const silicon = 'silicon';
 const veep = 'veep';
 const rock = '30rock';
 
 const welcomeMsg = document.getElementById('welcome-msg');
+var [docWidth, docHeight] = [
+  document.body.clientWidth, document.body.clientHeight
+];
 
 function checkShows() {
   var parsed = inputs.filter((str) => /\S/.test(str)).join('').toLowerCase();
@@ -53,13 +55,9 @@ function checkShows() {
 
 function addImage(show) {
   welcomeMsg.style.display = 'none';
-
   var image = document.createElement('img');
-  var [docWidth, docHeight] = [document.body.clientWidth, document.body.clientHeight];
 
   image.setAttribute('src', `assets/images/${show}.gif`);
-
-  document.body.appendChild(image);
 
   image.addEventListener('load', function() {
     var randX = (Math.random() * docWidth) - image.width;
@@ -79,6 +77,8 @@ function addImage(show) {
     image.style.left = `${randPos[0]}px`;
     image.style.top = `${randPos[1]}px`;
   });
+
+  document.body.appendChild(image);
 }
 
 window.addEventListener('keyup', (e) => {
