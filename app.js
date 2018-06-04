@@ -62,8 +62,6 @@ function addImage(show) {
   document.body.appendChild(image);
 
   image.addEventListener('load', function() {
-    var randX, randY;
-
     var randX = (Math.random() * docWidth) - image.width;
     var randY = (Math.random() * docHeight) - image.height;
 
