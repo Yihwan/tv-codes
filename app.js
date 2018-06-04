@@ -1,4 +1,5 @@
 var inputs = [];
+
 const mrRobot = 'mrrobot';
 const got = 'gameofthrones';
 const westworld = 'westworld';
@@ -6,6 +7,7 @@ const dexter = 'dexter';
 const bojack = 'bojack';
 const silicon = 'silicon';
 const veep = 'veep';
+const rock = '30rock';
 
 function checkShows() {
   var parsed = inputs.filter((str) => /\S/.test(str)).join('').toLowerCase();
@@ -38,6 +40,11 @@ function checkShows() {
   if (parsed.includes(veep)) {
     inputs = [];
     addImage(veep);
+  }
+
+  if (parsed.includes(rock)) {
+    inputs = [];
+    addImage(rock);
   }
 
 }
