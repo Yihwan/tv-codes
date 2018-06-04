@@ -9,6 +9,8 @@ const silicon = 'silicon';
 const veep = 'veep';
 const rock = '30rock';
 
+const welcomeMsg = document.getElementById('welcome-msg');
+
 function checkShows() {
   var parsed = inputs.filter((str) => /\S/.test(str)).join('').toLowerCase();
 
@@ -50,6 +52,8 @@ function checkShows() {
 }
 
 function addImage(show) {
+  welcomeMsg.style.display = 'none';
+
   var image = document.createElement('img');
   var [docWidth, docHeight] = [document.body.clientWidth, document.body.clientHeight];
 
@@ -58,11 +62,18 @@ function addImage(show) {
   document.body.appendChild(image);
 
   image.addEventListener('load', function() {
+    var randX, randY;
+
     var randX = (Math.random() * docWidth) - image.width;
     var randY = (Math.random() * docHeight) - image.height;
 
-    randX = randX < 0 ? 0 : randX;
-    randY = randY < 0 ? 0 : randY;
+    while (randX < 0) {
+      randX = (Math.random() * docWidth) - image.width;
+    }
+
+    while (randY < 0) {
+      randY = Math.random() * docHeight - image.height;
+    }
 
     var randPos = [ randX, randY ];
 
