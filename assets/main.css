@@ -31,14 +31,6 @@ a {
   color: #21ce99;
 }
 
-
-img {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: all 1s ease 1s;
-}
-
 .aside {
   font-size: 12px;
   margin-top: -5px;
