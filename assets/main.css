@@ -1,15 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500,600,700');
 
 body {
-  height: 100vh;
+
   background-color: #1b1b1d;
+
+}
+
+#main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  max-width: 100vw;
-}
 
+  max-width: 100vw;
+  height: 100vh;
+}
 
 #welcome-msg {
   font-family: 'IBM Plex Sans', sans-serif;
@@ -26,6 +31,13 @@ a {
   color: #21ce99;
 }
 
+
+img {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 1s ease 1s;
+}
 
 .aside {
   font-size: 12px;
